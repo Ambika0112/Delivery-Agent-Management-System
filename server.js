@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 const pool = new Pool({
   connectionString:
     process.env.DATABASE_URL ||
-    "postgresql://postgres:postgres@localhost:5432/delivery_agents",
+    "postgresql://postgres:postgres@localhost:5433/delivery_agents",
 });
 
 const redis = createClient({

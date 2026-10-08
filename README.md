@@ -118,6 +118,40 @@ docker compose up -d
 npm.cmd start
 ```
 
+## Deploy on Render
+
+This project includes `render.yaml`, so Render can create the web service,
+PostgreSQL database, and Redis-compatible Key Value service automatically.
+
+1. Push this repository to GitHub.
+2. Open Render.
+3. Choose **New +**.
+4. Choose **Blueprint**.
+5. Connect this GitHub repository:
+
+```text
+https://github.com/Ambika0112/Delivery-Agent-Management-System
+```
+
+6. Select the `render.yaml` file.
+7. Click **Apply**.
+
+Render will create:
+
+- `delivery-agent-management`: Node.js web service
+- `delivery-agent-postgres`: PostgreSQL database
+- `delivery-agent-redis`: Redis-compatible Key Value cache
+
+The deployed app will use Render environment variables automatically:
+
+```text
+DATABASE_URL
+REDIS_URL
+NODE_ENV=production
+```
+
+Do not upload your local `.env` file to Render or GitHub.
+
 ## API Endpoints
 
 | Method | Endpoint            | Purpose             |

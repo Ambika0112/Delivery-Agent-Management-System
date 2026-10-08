@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: delivery-agent-management
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: delivery-agent-postgres
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: delivery-agent-redis
+          type: keyvalue
+          property: connectionString
+
+  - type: keyvalue
+    name: delivery-agent-redis
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []
+
+databases:
+  - name: delivery-agent-postgres
+    databaseName: delivery_agents
+    user: delivery_agents_user
+    plan: free
