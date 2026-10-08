@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery Agent Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div>
+        <h1>Delivery Agents</h1>
+        <p>Manage delivery agent records</p>
+      </div>
+      <button id="addButton">Add Agent</button>
+    </header>
+
+    <section id="message" class="message hidden"></section>
+
+    <section class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Service Area</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="agentTable"></tbody>
+      </table>
+      <p id="emptyState" class="empty">No agents found.</p>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Agent</h2>
+        <button id="closeButton" class="close">&times;</button>
+      </div>
+
+      <form id="agentForm">
+        <input type="hidden" id="agentId" />
+
+        <label>
+          Full Name
+          <input id="full_name" required maxlength="100" />
+        </label>
+
+        <label>
+          Phone Number
+          <input id="phone" required maxlength="20" />
+        </label>
+
+        <label>
+          Email Address
+          <input id="email" type="email" required maxlength="150" />
+        </label>
+
+        <label>
+          Service Area
+          <input id="service_area" required maxlength="150" />
+        </label>
+
+        <label>
+          Status
+          <select id="status" required>
+            <option value="ACTIVE">Active</option>
+            <option value="INACTIVE">Inactive</option>
+          </select>
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="cancelButton" class="secondary">Cancel</button>
+          <button type="submit">Save Agent</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

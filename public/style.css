@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6f8;
+  color: #202124;
+}
+
+.container {
+  width: min(1200px, 94%);
+  margin: 40px auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+
+header p {
+  margin: 0;
+  color: #666;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: #e8f5e9;
+  color: #237a35;
+}
+
+.status.inactive {
+  background: #f1f1f1;
+  color: #666;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+.actions .delete {
+  background: #b42318;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+}
+
+.message {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: #fff3cd;
+  border: 1px solid #ffe69c;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  width: min(500px, 100%);
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close {
+  background: transparent;
+  color: #555;
+  font-size: 24px;
+  padding: 0 6px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.secondary {
+  background: #eee;
+  color: #222;
+}
+
+@media (max-width: 800px) {
+  .card {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 800px;
+  }
+}

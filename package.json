@@ -1,0 +1,14 @@
+{
+  "name": "delivery-agent-management",
+  "version": "1.0.0",
+  "description": "Simple Delivery Agent Management System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "redis": "^5.8.2"
+  }
+}
